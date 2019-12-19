@@ -835,6 +835,7 @@ Optional argument INFO is a plist of options."
     (let* ((efn export-file-name)
            (buf (find-file-noselect efn) ))
       (write-file efn)
+      (bury-buffer)
       (with-current-buffer buf
         (setq-local export-file-name efn))
       (kill-buffer buf)
